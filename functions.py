@@ -4,7 +4,7 @@
 bastien.rossiaud@gmail.com
 03/10/2024
 objective : program that contains functions to realise a "pendu"
-to do : bonnes pratiques
+to do : None
 """
 
 import random as r
@@ -33,6 +33,11 @@ def affichage_mot(mot, affiche, lettre):
     return nouv_mot,affiche
 
 def first_print(mot):
+     """
+     fonction qui effectue le premier affichage du mot utilisé
+     in : str (le mot utilisé)
+     out : un str (nouv_mot) et une liste contenant tous les caractères du str
+     """
      nouv_mot = ""
      affiche = [mot[0]]
      for i in range(len(mot)-1):
@@ -43,12 +48,27 @@ def first_print(mot):
 
 
 def verif_lettre(mot, lettre):
+     """
+     fonction qui vérifie si la lettre est dans le mot
+     in : str (le mot choisi); str (la lettre a vérifier)
+     out : bool
+     """
      return lettre in mot
 
 def verif_mot_complet(affiche) : 
+     """
+     fonction qui vérifie si le mot est complet
+     in : une liste de str (affiche)
+     out : bool
+     """
      return " ___ " in affiche
 
 def lettre_proposee(lettre):
+     """
+     fonction qui propose de changer de lettre si la lettre a déjà été proposée
+     in : str (une lettre)
+     out : str (une nouvelle lettre)
+     """
      string = str(input("Lettre deja proposée choississez en une autre : "))
      if string != lettre : 
           return string
@@ -56,4 +76,9 @@ def lettre_proposee(lettre):
           lettre_proposee(lettre)
 
 def verif_nbre_vies(lives):
+     """
+     fonction qui vérifie que le joueur a toujours des vies 
+     in : le compteur de vie
+     out : bool
+     """
      return lives == 0
