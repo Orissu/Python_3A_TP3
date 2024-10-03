@@ -9,8 +9,10 @@ to do : main program
 
 import functions as fct
 
-#déclaration des variables
+compt = 0
+
 def jouer():
+
     lives = 8
     mot = fct.choice()
     nouv_mot, affiche = fct.first_print(mot)
@@ -20,8 +22,9 @@ def jouer():
 
     while fct.verif_mot_complet(affiche) : 
         lettre = str(input("Proposez une lettre : "))
-    # if lettre in memoire_lettres : 
-        #    memoire_lettres.append(f.lettre_proposee(lettre))
+        if lettre in memoire_lettres : 
+            lettre = fct.lettre_proposee(lettre)
+        memoire_lettres.append(lettre)
         if fct.verif_lettre(mot, lettre):
             nouv_mot, affiche = fct.affichage_mot(mot,affiche,lettre)
             print (nouv_mot)
@@ -32,10 +35,15 @@ def jouer():
                 raise IndexError
             else :
                 lives -= 1
+        print(f"il vous reste {lives} vies")
 
     print("vous avez gagné !")
+    global compt
+    compt += lives
 
 
 jouer()
+
 if str(input("rejouer ? ")) == "oui" :
+    print(f"votre score est de {compt}")
     jouer()

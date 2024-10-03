@@ -52,6 +52,8 @@ def lettre_proposee(lettre):
      string = str(input("Lettre deja proposée choississez en une autre : "))
      if string != lettre : 
           return string
+     else : 
+          lettre_proposee(lettre)
 
 def verif_nbre_vies(lives):
      return lives == 0
