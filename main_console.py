@@ -4,7 +4,7 @@
 bastien.rossiaud@gmail.com
 03/10/2024
 objective : main program for the pendu
-to do : main program
+to do : None
 """
 
 import functions as fct
